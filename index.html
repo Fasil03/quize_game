@@ -8,12 +8,34 @@
   </head>
   <body>
     <div class="continer">
-      <div class="screen active" id="screen active"> 
-        <h1> quiz time</h1>
+      <div class="screen active" id="screen active">
+        <h1>quiz time</h1>
         <p>test your knowledge with the fun questions</p>
-        <button id="start-btn">start quizgit </button>
+        <button id="start-btn">start quiz</button>
       </div>
-      <div> </div>
+      <div class="screen" id="quiz-screen">
+        <div class="qiz-header">
+          <h2 id="question-text">question goes here</h2>
+          <div class="quiz-info">
+            <p>question <span id="current-question">1</span> of <span>5</span></p>
+            <p>score:<span id="score">0</span></p>
+          </div>
+        </div>
+        <div class="answers-continer" id="answers-continer">
+
+        </div>
+        <div class="progres-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+      </div>
+      <div class="screen" id="result-screen">
+        <h1>quiz result</h1>
+        <div class="reult-info">
+            <p> you scored<span id="final-score"> 0 </span> out of <span id="max-score">5</span></p>
+            <div id="result message">good job</div>
+        </div>
+        <button id="restart-btn">Restart quiz</button>
+      </div>
     </div>
   </body>
 </html>
