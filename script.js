@@ -10,15 +10,11 @@ const totalQuestionSpan = document.getElementById("total-questions");
 const scoreSpan = document.getElementById("score");
 const finalScoreSpan = document.getElementById("final-score");
 const maxScoreSpan = document.getElementById("max-score");
-
-// ❌ fixed: wrong id "result=message" → ✅ "result-message"
 const resultMessage = document.getElementById("result-message");
-
 const restartButton = document.getElementById("restart-btn");
 const progressBar = document.getElementById("progress");
 
-// ❌ fixed: typo "quizQuestios" → ✅ "quizQuestions"
-const quizQuestions = [
+  const quizQuestions = [
   {
     question: "What is the capital city of Ethiopia?",
     answers: [
@@ -32,7 +28,7 @@ const quizQuestions = [
     question: "What is your father's name?",
     answers: [
       { text: "Habtamu", correct: false },
-      { text: "Alemayehu", correct: true }, // optional spelling fix
+      { text: "Alemye", correct: true }, 
       { text: "Eyob", correct: false },
       { text: "Azanaw", correct: false },
     ],
@@ -40,7 +36,7 @@ const quizQuestions = [
   {
     question: "What is your favorite subject?",
     answers: [
-      { text: "Maths", correct: true },
+      { text: "Mathes", correct: true },
       { text: "English", correct: false },
       { text: "Biology", correct: false },
       { text: "Chemistry", correct: false },
@@ -56,7 +52,7 @@ const quizQuestions = [
     ],
   },
   {
-    question: "Which one is the best city in Ethiopia?",
+  question: "Which one is the best city in Ethiopia?",
     answers: [
       { text: "Bahir Dar", correct: false },
       { text: "Gondar", correct: true },
@@ -108,11 +104,7 @@ function showQuestion() {
     button.textContent = answer.text;
     button.classList.add("answer-btn");
     button.dataset.correct = answer.correct;
-
-    // ❌ fixed: wrong syntax `.addEventListener("click".selectAnswer)`
-    // ✅ should be `.addEventListener("click", selectAnswer)`
     button.addEventListener("click", selectAnswer);
-
     answersContainer.appendChild(button);
   });
 }
@@ -121,10 +113,8 @@ function showQuestion() {
 function selectAnswer(event) {
   if (answerDisabled) return;
   answerDisabled = true;
-
   const selectedButton = event.target;
   const isCorrect = selectedButton.dataset.correct === "true";
-
   Array.from(answersContainer.children).forEach((button) => {
     if (button.dataset.correct === "true") {
       button.classList.add("correct");
@@ -132,7 +122,6 @@ function selectAnswer(event) {
       button.classList.add("incorrect");
     }
   });
-
   if (isCorrect) {
     score++;
     scoreSpan.textContent = score;
@@ -173,5 +162,5 @@ function showResults() {
 // ✅ Restart quiz
 function restartQuiz() {
   resultScreen.classList.remove("active");
-  startScreen.classList.add("active"); // fixed: ensure you return to start
+  startScreen.classList.add("active"); 
 }

@@ -17,7 +17,6 @@ body {
 
 .container {
   background-color: #fff;
-  /* fixed: invalid syntax → changed 'border: radius 1rem;' to 'border-radius: 1rem;' */
   border-radius: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -43,12 +42,11 @@ body {
 }
 
 #start-screen p {
-  color: #3a3434; /* fixed: used better contrast than repeating red color */
+  color: #3a3434; 
   margin-bottom: 30px;
   font-size: 1.2rem;
 }
 
-/* fixed: this selector was redundant and confusing, so merged styles above */
 .quiz-header {
   margin-bottom: 2rem;
 }
@@ -74,11 +72,9 @@ body {
   margin-bottom: 25px;
 }
 
-/* fixed: selector missing dot → changed 'answer-btn' to '.answer-btn' */
 .answer-btn {
   background-color: #f8f8f8;
   color: #333;
-  /* fixed: invalid border syntax → should be 'border: 1px solid #eadbc8;' */
   border: 1px solid #eadbc8;
   border-radius: 10px;
   padding: 1rem;
@@ -146,7 +142,6 @@ body {
 button {
   background-color: #e86a33;
   color: wheat;
-  /* fixed: invalid property 'bottom: none;' → should be 'border: none;' */
   border: none;
   border-radius: 30px;
   padding: 15px 30px;
@@ -156,7 +151,7 @@ button {
 }
 
 button:hover {
-  background-color: #c75a29; /* fixed: use darker shade for visible hover */
+  background-color: #c75a29; 
 }
 
 @media (max-width: 500px) {
@@ -176,7 +171,6 @@ button:hover {
     padding: 12px;
   }
 
-  /* fixed: typo '.buttom' → '.button' if you ever plan to use it */
   .button {
     padding: 12px 25px;
     font-size: 1rem;
