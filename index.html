@@ -3,39 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quize_game</title>
+    <title>Quiz Game</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <div class="screen active" id="screen active">
-        <h1>quiz time</h1>
-        <p>test your knowledge with the fun questions</p>
-        <button id="start-btn">start quiz</button>
+      <!-- fixed: removed extra space in id -->
+      <div class="screen active" id="start-screen">
+        <h1>Quiz Time!</h1>
+        <p>Test your knowledge with fun questions</p>
+        <button id="start-btn">Start Quiz</button>
       </div>
+
       <div class="screen" id="quiz-screen">
-        <div class="qiz-header">
-          <h2 id="question-text">question goes here</h2>
+        <div class="quiz-header">
+          <h2 id="question-text">Question goes here</h2>
+
           <div class="quiz-info">
-            <p>question <span id="current-question">1</span> of <span id="tolal-questions">5</span></p>
-            <p>score:<span id="score">0</span></p>
+            <!-- fixed: typo in id "tolal-questions" -> "total-questions" -->
+            <p>Question: <span id="current-question">1</span> of <span id="total-questions">5</span></p>
+            <!-- fixed: added space after Score: for better readability -->
+            <p>Score: <span id="score">0</span></p>
           </div>
         </div>
-        <div class="answers-container" id="answers-container">
 
-        </div>
-        <div class="progres-bar">
-            <div class="progress" id="progress"></div>
+        <!-- fixed: removed unnecessary extra spaces -->
+        <div id="answers-container" class="answers-container"></div>
+
+        <div class="progress-bar">
+          <div id="progress" class="progress"></div>
         </div>
       </div>
-      <div class="screen" id="result-screen">
-        <h1>quiz result</h1>
-        <div class="reult-info">
-            <p> you scored<span id="final-score"> 0 </span> out of <span id="max-score">5</span></p>
-            <div id="result message">good job</div>
+
+      <div id="result-screen" class="screen">
+        <h1>Quiz Result</h1>
+
+        <div class="result-info">
+          <!-- fixed: added missing space after “you scored” -->
+          <p>You scored <span id="final-score">0</span> out of <span id="max-score">5</span></p>
+
+          <!-- fixed: invalid id with space; changed "result message" -> "result-message" -->
+          <div id="result-message">Good job!</div>
         </div>
-        <button id="restart-btn">Restart quiz</button>
+
+        <button id="restart-btn">Restart Quiz</button>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
