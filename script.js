@@ -39,6 +39,15 @@ function startQuiz(){
     scoreSpan.textContent=score;
     startScreen.classList.remove("active");
     quizScreen.classList.add("active");
+    showQuestion()
+
+}
+function showQuestion() {
+    answerDisabled=false;
+    const currentQuestion=quizQuestios[currentQuestionIndex]
+    currentQuestionSpan.textContent=currentQuestionIndex+1
+    const progressPercent=(currentQuestionIndex/quizQuestios.length)*100;
+    progressbar.style.width=progressPercent+"%"
 
 }
 function restartQuiz(){
